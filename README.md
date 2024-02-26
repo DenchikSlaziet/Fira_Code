@@ -9,7 +9,8 @@
     Session <.. Hall
     Staff .. Post
     User .. Role
-    Film .. Genre  
+    Film .. Genre
+    Ticket .. PaymentMethod
     class Hall{
         +short Number
         +short CountPlaceInRow
@@ -46,6 +47,8 @@
         +short Row
         +short Place
         +decimal Price
+        +DateTimeOffset SaleDate??
+        +PaymentMethod PaymentMethod       
     }
     class Session {
       +Guid FilmId
@@ -70,5 +73,10 @@
         <<enumeration>>
         Боевик,
         Драмма
+    }
+    class PaymentMethod {
+        <<enumeration>>
+        Cash,
+        Card
     }
 ```
